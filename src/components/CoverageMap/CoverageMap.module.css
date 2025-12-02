@@ -1,0 +1,85 @@
+.coverageSection {
+  background-color: #192a56; /* Azul escuro do seu design */
+  padding: 4rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o conteúdo */
+  gap: 4rem; /* Espaço entre o texto e o mapa */
+  color: #ffffff; /* Texto branco */
+}
+
+.contentContainer {
+  flex: 1;
+  max-width: 500px; /* Limita a largura do texto */
+  text-align: left;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #ffffff; /* Botão branco */
+  color: #192a56; /* Texto azul escuro */
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none; /* Sem borda, já que o fundo é branco */
+}
+
+.button:hover {
+  background-color: #e0e0e0; /* Cinza claro no hover */
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 500px; /* Limita a largura da imagem */
+  text-align: center; /* Centraliza o mapa */
+}
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Garante que o mapa não fique muito grande */
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2)); /* Sombra suave */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+  .coverageSection {
+    flex-direction: column; /* Coloca itens em coluna em telas menores */
+    text-align: center; /* Centraliza texto também */
+    gap: 3rem;
+  }
+  .contentContainer {
+    max-width: 80%; /* Mais largura para o texto */
+  }
+  .imageContainer {
+    max-width: 80%; /* Mais largura para o mapa */
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  .button {
+    width: 100%; /* Botão ocupa toda a largura */
+  }
+}

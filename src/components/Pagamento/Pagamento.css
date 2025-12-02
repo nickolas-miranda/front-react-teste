@@ -1,0 +1,335 @@
+/* Importando fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #0056b3;
+  --primary-dark: #003d82;
+  --accent-color: #00d4ff;
+  --bg-color: #f0f4f8;
+  --text-dark: #1a202c;
+  --text-gray: #718096;
+  --white: #ffffff;
+  --border-radius: 16px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pag-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-menu a {
+  margin-left: 30px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--white);
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* --- Conteúdo --- */
+.pag-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.pag-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.pag-desc {
+  color: var(--text-gray);
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+.pagamento-area {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* --- Cartões Gerais --- */
+.pag-metodos, .pag-detalhes {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: 35px;
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.pag-metodos h3, .pag-detalhes h3 {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+/* --- Coluna Esquerda: Seleção --- */
+.pag-metodos {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+.metodo-opcao {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.metodo-opcao:hover {
+  background-color: #f8fbff;
+  border-color: var(--primary-color);
+}
+
+.metodo-opcao:has(input:checked) {
+  background-color: #eef6ff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.metodo-opcao input {
+  margin: 0 15px 0 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.metodo-opcao label {
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* --- Coluna Direita: Detalhes --- */
+.pag-detalhes {
+  flex-grow: 1;
+  max-width: 600px;
+  min-height: 400px;
+}
+
+/* Labels específicos para formulário de pagamento */
+.pag-detalhes label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* NOVA CLASSE para inputs de pagamento */
+.pag-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  background-color: #fcfcfc;
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.pag-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.linha {
+  display: flex;
+  gap: 20px;
+}
+.linha div {
+  width: 50%;
+}
+
+/* --- PIX --- */
+.pix-box {
+  text-align: center;
+}
+
+.qr-box {
+  background: var(--white);
+  padding: 15px;
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.pix-copia {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+}
+
+.chave-box {
+  background: #edf2f7;
+  color: var(--primary-dark);
+  padding: 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  border: 1px solid #e2e8f0;
+  word-break: break-all;
+  user-select: all;
+}
+
+/* --- Boleto --- */
+.boleto-box {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.btn-boleto {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-boleto:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* --- Total e Botão Confirmar --- */
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.total strong {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.btn-confirmar {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+}
+
+.btn-confirmar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+}
+
+.btn-confirmar:active {
+  transform: translateY(0);
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 960px) {
+  .pagamento-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pag-metodos, .pag-detalhes {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-menu a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+  
+  .pag-conteudo {
+    padding: 30px 15px;
+  }
+  
+  .pag-title {
+    font-size: 1.8rem;
+  }
+  
+  .linha {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .linha div {
+    width: 100%;
+  }
+}

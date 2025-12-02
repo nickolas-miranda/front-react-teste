@@ -1,0 +1,468 @@
+/* Reset e Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.resumo-servico-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: #1d4ed8;
+  color: white;
+  padding: 1rem;
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: none;
+  gap: 2rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+
+/* Main Content */
+.resumo-main {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.resumo-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 968px) {
+  .resumo-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Seção do Mecânico */
+.mecanico-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circulo-azul {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+}
+
+.circulo-azul::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.mecanico-card-resumo {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mecanico-foto-resumo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mecanico-info-resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nome-verificado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.nome-verificado h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.badge-verificado-resumo {
+  background-color: #10b981;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-verificado-resumo svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  stroke-width: 3;
+}
+
+.especialidade-resumo {
+  font-size: 1.125rem;
+  opacity: 0.95;
+}
+
+.avaliacao-resumo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.estrelas-resumo {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.estrela-preenchida-resumo {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+
+.estrela-vazia-resumo {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+.nota-resumo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Seção de Detalhes */
+.detalhes-section {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.titulo-resumo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.detalhes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.detalhe-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detalhe-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detalhe-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.detalhe-valor {
+  font-size: 1.125rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.btn-confirmar-chamada {
+  width: 100%;
+  background-color: #1d4ed8;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+.btn-confirmar-chamada:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.4);
+}
+
+.btn-confirmar-chamada:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+  background-color: #111827;
+  color: white;
+  padding: 4rem 0 2rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer-logo-completo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-car-icon {
+  width: 3rem;
+  height: 1.5rem;
+  color: #3b82f6;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-email {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #4b5563;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn:hover {
+  border-color: white;
+}
+
+.footer-contato {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contato-input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+}
+
+.contato-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contato-btn:hover {
+  background-color: #1e40af;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1f2937;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .circulo-azul {
+    max-width: 400px;
+  }
+
+  .mecanico-foto-resumo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .nome-verificado h2 {
+    font-size: 1.5rem;
+  }
+
+  .titulo-resumo {
+    font-size: 1.5rem;
+  }
+
+  .detalhes-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumo-main {
+    padding: 2rem 1rem;
+  }
+
+  .circulo-azul {
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+
+  .mecanico-foto-resumo {
+    width: 120px;
+    height: 120px;
+    border-width: 3px;
+  }
+
+  .nome-verificado h2 {
+    font-size: 1.25rem;
+  }
+
+  .especialidade-resumo {
+    font-size: 1rem;
+  }
+
+  .estrela-preenchida-resumo,
+  .estrela-vazia-resumo {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .nota-resumo {
+    font-size: 1.25rem;
+  }
+
+  .detalhes-section {
+    padding: 1.25rem;
+  }
+
+  .titulo-resumo {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .detalhe-label {
+    font-size: 0.875rem;
+  }
+
+  .detalhe-valor {
+    font-size: 1rem;
+  }
+
+  .btn-confirmar-chamada {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+}

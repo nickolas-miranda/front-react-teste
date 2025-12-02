@@ -1,0 +1,589 @@
+
+.auth-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00b4d8 0%, #0077b6 50%, #03045e 100%);
+  position: relative;
+  justify-content: space-between;
+}
+
+/* Botão Voltar */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 100;
+  padding: 12px 24px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-3px);
+}
+
+/* --- LADO ESQUERDO (Formulário) --- */
+.auth-left {
+  width: 35%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px;
+  padding-left: 60px;
+  z-index: 2;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 35px 30px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+}
+
+/* Logo */
+.car-logo-container {
+  text-align: left;
+  margin-bottom: 25px;
+  padding-left: 5px;
+}
+
+.car-logo-placeholder {
+  display: inline-block;
+  width: 120px;
+  height: auto;
+}
+
+.car-logo-placeholder img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Abas (Login / Cadastro) */
+.auth-tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  color: #999;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab-btn.active {
+  color: #000;
+  font-weight: 600;
+  border-bottom: 2px solid #0066ff;
+}
+
+/* Inputs e Labels */
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s;
+  background: white;
+  color: #333;
+}
+
+.input-group input:focus {
+  border-color: #0066ff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* Input de Senha com Olho */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.eye-icon:hover {
+  color: #0066ff;
+}
+
+/* Input de Telefone (+55) */
+.phone-input {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s;
+}
+
+.phone-input:focus-within {
+  border-color: #0066ff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.phone-input .country-code {
+  background: #f8f8f8;
+  padding: 14px 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  border-right: 1px solid #ddd;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.phone-input input {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.phone-input input:focus {
+  box-shadow: none;
+}
+
+/* Link Esqueceu Senha */
+.forgot-password {
+  text-align: left;
+  margin-top: -6px;
+  margin-bottom: 22px;
+}
+
+.forgot-password a {
+  color: #0066ff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.forgot-password a:hover {
+  color: #0052cc;
+  text-decoration: underline;
+}
+
+/* Botão Principal */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* --- LADO DIREITO (Imagem Background) --- */
+.auth-right {
+  width: 50%;
+  position: relative;
+  background: url('../../assets/imgLogin.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay azulado sobre a imagem */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(3, 4, 94, 0.2));
+  pointer-events: none;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+
+/* Tablets Grandes (1024px - 1280px) */
+@media (max-width: 1280px) {
+  .auth-left {
+    width: 40%;
+    padding-left: 40px;
+  }
+  .auth-right {
+    width: 60%;
+  }
+  .auth-card {
+    max-width: 360px;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .auth-left {
+    width: 45%;
+    padding: 30px;
+  }
+  .auth-right {
+    width: 55%;
+  }
+  .auth-card {
+    max-width: 380px;
+    padding: 30px 25px;
+  }
+  .tab-btn {
+    font-size: 0.95rem;
+    padding: 10px 15px;
+  }
+  .input-group input {
+    font-size: 0.95rem;
+    padding: 13px 14px;
+  }
+  .phone-input .country-code {
+    font-size: 0.9rem;
+    padding: 13px 14px;
+  }
+}
+
+/* Tablets Pequenos (600px - 768px) */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    background: linear-gradient(180deg, #00b4d8 0%, #0077b6 100%);
+  }
+  
+  .auth-left {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 80px;
+    justify-content: flex-start;
+    background: transparent;
+  }
+  
+  .auth-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 35px 30px;
+  }
+  
+  .auth-right {
+    display: none;
+  }
+  
+  .back-button {
+    background: rgba(255, 255, 255, 0.9);
+    color: #0066ff;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .car-logo-container {
+    text-align: center;
+  }
+  
+  .car-logo-placeholder {
+    width: 110px;
+  }
+  
+  .auth-tabs {
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    font-size: 1rem;
+  }
+  
+  .input-group label {
+    font-size: 0.8rem;
+  }
+  
+  .input-group input {
+    font-size: 1.05rem;
+    padding: 15px;
+  }
+  
+  .phone-input .country-code {
+    font-size: 1rem;
+    padding: 15px;
+  }
+  
+  .forgot-password a {
+    font-size: 0.95rem;
+  }
+  
+  .submit-btn {
+    font-size: 1.05rem;
+    padding: 16px;
+  }
+}
+
+/* Smartphones (480px - 600px) */
+@media (max-width: 600px) {
+  .auth-left {
+    padding: 15px;
+    padding-top: 70px;
+  }
+  
+  .auth-card {
+    max-width: 100%;
+    padding: 30px 25px;
+  }
+  
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .car-logo-placeholder {
+    width: 100px;
+  }
+  
+  .tab-btn {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-group label {
+    font-size: 0.75rem;
+  }
+  
+  .input-group input {
+    font-size: 1rem;
+    padding: 14px;
+  }
+  
+  .phone-input .country-code {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+  
+  .forgot-password a {
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+/* Smartphones Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .auth-left {
+    padding: 12px;
+    padding-top: 65px;
+  }
+  
+  .auth-card {
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+  
+  .back-button {
+    top: 12px;
+    left: 12px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+  
+  .car-logo-placeholder {
+    width: 90px;
+  }
+  
+  .auth-tabs {
+    margin-bottom: 25px;
+  }
+  
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+  }
+  
+  .input-group input {
+    font-size: 0.95rem;
+    padding: 13px;
+  }
+  
+  .input-group input::placeholder {
+    font-size: 0.9rem;
+  }
+  
+  .password-wrapper input {
+    padding-right: 42px;
+  }
+  
+  .eye-icon {
+    font-size: 1.1rem;
+    right: 13px;
+  }
+  
+  .phone-input .country-code {
+    font-size: 0.9rem;
+    padding: 13px 12px;
+  }
+  
+  .phone-input input {
+    font-size: 0.95rem;
+  }
+  
+  .forgot-password {
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password a {
+    font-size: 0.85rem;
+  }
+  
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+}
+
+/* Telas Muito Pequenas (até 360px) */
+@media (max-width: 360px) {
+  .auth-card {
+    padding: 20px 15px;
+  }
+  
+  .car-logo-placeholder {
+    width: 80px;
+  }
+  
+  .tab-btn {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+  
+  .input-group label {
+    font-size: 0.65rem;
+  }
+  
+  .input-group input {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  
+  .phone-input .country-code {
+    font-size: 0.85rem;
+    padding: 12px 10px;
+  }
+  
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 13px;
+  }
+}
+
+/* Landscape em smartphones */
+@media (max-height: 600px) and (orientation: landscape) {
+  .auth-container {
+    overflow-y: auto;
+  }
+  
+  .auth-left {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+  
+  .auth-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+} 

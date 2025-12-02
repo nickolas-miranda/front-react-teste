@@ -1,0 +1,184 @@
+/* A seção que "segura" o card, dando um espaçamento da tela */
+.section {
+  padding: 3rem 5%;
+  background-color: #f8f9fa;
+}
+
+/* O card principal */
+.card {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  gap: 2rem;
+}
+
+/* Coluna da imagem */
+.imageContainer {
+  flex: 1;
+  max-width: 45%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Coluna do conteúdo */
+.content {
+  flex: 1;
+  padding: 2rem 2.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.text:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #192a56;
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #0d172e;
+  transform: translateY(-2px);
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .card {
+    gap: 1.5rem;
+  }
+
+  .content {
+    padding: 1.5rem 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+}
+
+/* Tablets pequenos - Empilha verticalmente */
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 4%;
+  }
+
+  .card {
+    flex-direction: column; /* Empilha imagem e conteúdo */
+    gap: 0;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+    width: 100%;
+    min-height: 250px; /* Altura mínima para a imagem */
+  }
+
+  .image {
+    min-height: 250px;
+  }
+
+  .content {
+    padding: 2rem 1.5rem;
+    text-align: center; /* Centraliza o texto em mobile */
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .text:last-of-type {
+    margin-bottom: 1.5rem;
+  }
+
+  .button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 4%;
+  }
+
+  .card {
+    border-radius: 12px;
+  }
+
+  .imageContainer {
+    min-height: 200px;
+  }
+
+  .image {
+    min-height: 200px;
+  }
+
+  .content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .text:last-of-type {
+    margin-bottom: 1.25rem;
+  }
+
+  .button {
+    width: 100%; /* Botão ocupa largura total em mobile pequeno */
+    text-align: center;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* Remove hover effect em mobile */
+  .button:hover {
+    transform: none;
+  }
+}

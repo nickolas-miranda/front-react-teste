@@ -1,0 +1,106 @@
+.partnerSection {
+  background-color: #192a56; /* Azul escuro */
+  color: #ffffff; /* Texto branco */
+  padding: 4rem 5% 0; /* Padding inferior 0, pois a onda vai cobrir */
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  gap: 4rem;
+  position: relative; /* Essencial para posicionar a onda */
+  overflow: hidden; /* Garante que a onda não cause scroll horizontal */
+  min-height: 500px;
+}
+
+.contentContainer {
+  flex: 1;
+  max-width: 550px;
+  text-align: left;
+  /* 1. Ajuste o padding-bottom para dar espaço para a onda */
+  padding-bottom: 100px; /* Ajuste este valor conforme o tamanho da sua onda */
+  z-index: 1; 
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.text:last-of-type {
+  margin-bottom: 2.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #0d6efd;
+  color: #ffffff;
+  padding: 0.9rem 2.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.button:hover {
+  background-color: #0b5ed7;
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 450px;
+  text-align: center;
+  z-index: 1; 
+}
+
+.partnerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. Remova o estilo .waveBackground (se existir) */
+/* .waveBackground { ... } */
+
+
+/* 3. Adicione este novo estilo para o SVG da onda */
+.waveDecoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: auto;
+  max-height: 150px; 
+  object-fit: cover; 
+  z-index: 0; 
+    pointer-events: none; 
+
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+  .partnerSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0; /* A onda vai cobrir */
+  }
+  .contentContainer {
+    max-width: 80%;
+    padding-bottom: 80px; /* Espaço para a onda */
+  }
+  .imageContainer {
+    max-width: 60%;
+  }
+  .partnerImage {
+    margin-top: 2rem;
+  }
+}

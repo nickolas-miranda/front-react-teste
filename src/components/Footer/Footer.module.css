@@ -1,0 +1,200 @@
+/* ======== FOOTER PRINCIPAL ======== */
+.footer {
+  position: relative;
+  background-color: #0d172e; /* Fundo escuro elegante */
+  overflow: hidden;
+}
+
+/* ======== ONDA BRANCA SUPERIOR ======== */
+.wave {
+  position: absolute;
+  top: -190px; /* Deslocamento para cima. A altura da onda deve ser ~190px */
+  left: 0;
+  width: 100vw;
+  /* height: 180px; altura visível da onda */
+  object-fit: cover;
+  object-position: top;
+  z-index: 30; /* Garante que fique acima do conteúdo do footer, mas abaixo do conteúdo da página anterior */
+  pointer-events: none;
+}
+
+/* ======== CONTEÚDO DO FOOTER ======== */
+.content {
+  position: relative;
+  background: linear-gradient(to bottom, #152650 0%, #0d172e 100%);
+  padding: 10rem 5% 2rem; /* O padding-top (10rem) compensa o deslocamento para baixo do conteúdo */
+  z-index: 10;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ======== SEÇÃO SUPERIOR ======== */
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.brandInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.email {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.email:hover {
+  color: #60a5fa;
+}
+
+/* ======== FORMULÁRIO ======== */
+.contactForm {
+  display: flex;
+  align-items: center;
+  background-color: #0b1a33;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2a3a5a;
+  max-width: 350px;
+  width: 100%;
+}
+
+.contactInput {
+  background-color: transparent;
+  border: none;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  flex: 1;
+  
+}
+
+.contactInput::placeholder {
+  color: #aaa;
+}
+
+.contactButton {
+  background-color: #1e40af;
+  border: none;
+  color: #ffffff;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.contactButton:hover {
+  background-color: #2563eb;
+}
+
+/* ======== DIVISÓRIA ======== */
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #2b3550;
+  margin: 1rem 0 2rem;
+}
+
+/* ======== PARTE INFERIOR ======== */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialLinks a img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.socialLinks a:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.copyright {
+  text-align: right;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 1024px) {
+  .wave {
+    height: 150px;
+  }
+
+  .content {
+    padding-top: 9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brandInfo {
+    align-items: center;
+  }
+
+  .contactForm {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wave {
+    height: 120px;
+  }
+
+  .content {
+    padding-top: 8rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .socialLinks a img {
+    width: 22px;
+    height: 22px;
+  }
+}

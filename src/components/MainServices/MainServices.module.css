@@ -1,0 +1,73 @@
+.mainServices {
+  /* Use a cor azul exata do seu Figma */
+  background-color: #5c95e1; 
+  padding: 4rem 5%;
+  text-align: center;
+  
+  /* Para a curva - veja a nota abaixo */
+  position: relative; 
+}
+
+.title {
+  color: #ffffff; /* Texto branco */
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem; /* Espaço antes do grid */
+}
+
+.servicesGrid {
+  display: grid;
+  /* Cria 3 colunas em telas maiores */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Espaço entre os cards */
+  max-width: 1000px;
+  margin: 0 auto; /* Centraliza o grid */
+}
+
+.serviceCard {
+  background-color: #ffffff; /* Card branco */
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px); /* Efeito de levantar */
+}
+
+.icon {
+  height: 60px; /* Ajuste o tamanho conforme o design */
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.serviceTitle {
+  color: #212529; /* Texto escuro */
+  font-size: 1.1rem;
+  font-weight: 600;
+  /* Garante que os títulos mais longos não quebrem o layout */
+  min-height: 44px; 
+}
+
+/* --- Responsividade para telas menores --- */
+@media (max-width: 768px) {
+  .servicesGrid {
+    /* 2 colunas em tablets */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesGrid {
+    /* 1 coluna em celulares */
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}

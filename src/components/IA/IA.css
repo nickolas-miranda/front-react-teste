@@ -1,0 +1,299 @@
+/* --- VARIÁVEIS CSS --- */
+:root {
+  --primary-color: #004AAD;
+  --primary-dark: #3a7ce8;
+  --text-color: #333;
+  --light-gray: #f7f7f7;
+  --border-color: #e4e4e4;
+  --user-msg-bg: #52c2fe;
+  --bot-msg-bg: #009BF0;
+  --shadow: 0 4px 20px rgba(0,0,0,0.15);
+  --border-radius: 20px;
+  --transition: all 0.3s ease;
+}
+
+/* --- ESTILOS DO WIDGET --- */
+#carby-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  transition: var(--transition);
+}
+
+#carby-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#carby-header:hover {
+  background: var(--primary-dark);
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+#carby-chat {
+  height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+  background: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Personalizar scrollbar */
+#carby-chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+#carby-chat::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#carby-chat::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+#carby-chat::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.msg {
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 85%;
+  line-height: 1.4;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.user {
+  background: var(--user-msg-bg);
+  align-self: flex-end;
+  border-bottom-right-radius: 6px;
+}
+
+.carby {
+  background: var(--bot-msg-bg);
+  border: 1px solid var(--border-color);
+  align-self: flex-start;
+  border-bottom-left-radius: 6px;
+}
+
+.typing-indicator {
+  display: none;
+  padding: 12px 16px;
+  background: var(--bot-msg-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  align-self: flex-start;
+  border-bottom-left-radius: 6px;
+  gap: 4px;
+}
+
+.typing-indicator.active {
+  display: flex;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background: #999;
+  border-radius: 50%;
+  animation: typingBounce 1.3s linear infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+#carby-input-area {
+  display: flex;
+  border-top: 1px solid var(--border-color);
+  padding: 10px;
+  background: white;
+}
+
+#carby-msg {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+#carby-msg:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 140, 255, 0.2);
+}
+
+#carby-send {
+  padding: 12px 20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+#carby-send:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+#carby-send:disabled {
+  background: #a0a0a0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.welcome-message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 10px;
+}
+
+/* Estado minimizado */
+#carby-widget.minimized {
+  height: 60px;
+  width: 200px;
+}
+
+#carby-widget.minimized #carby-chat,
+#carby-widget.minimized #carby-input-area,
+#carby-widget.minimized .typing-indicator {
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  #carby-widget {
+    width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  .msg {
+    max-width: 90%;
+  }
+}
+
+
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 9999;
+  padding: 0;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+.chat-icon-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+

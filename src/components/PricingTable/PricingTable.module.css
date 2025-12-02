@@ -1,0 +1,128 @@
+.pricingSection {
+  background-color: #192a56; /* Azul escuro */
+  color: #ffffff;
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Faz os cards terem a mesma altura */
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.planCard {
+  flex: 1;
+  background-color: #ffffff;
+  color: #212529; /* Texto escuro dentro do card */
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo verticalmente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.planHeader {
+  margin-bottom: 1.5rem;
+}
+
+.planTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.planSubtitle {
+  font-size: 0.9rem;
+  color: #6c757d; /* Cinza */
+  margin: 0;
+}
+
+.planPrice {
+  margin-bottom: 2rem;
+  color: #192a56; /* Preço em azul escuro */
+}
+
+.currency {
+  font-size: 1.25rem;
+  font-weight: 600;
+  vertical-align: top;
+  margin-right: 0.25rem;
+}
+
+.amount {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.period {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  flex-grow: 1; /* Faz a lista crescer para empurrar o botão para baixo */
+}
+
+.featureList li {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.iconCheck {
+  color: #198754; /* Verde (pode ser #0d6efd se for azul no figma) */
+}
+
+/* Você pode adicionar .iconCross { color: #dc3545; } se tiver itens com 'X' */
+
+.selectButton {
+  display: block; /* Faz o link ocupar a largura toda */
+  background-color: #343a40; /* Botão cinza escuro/preto */
+  color: #ffffff;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.selectButton:hover {
+  background-color: #212529; /* Mais escuro no hover */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .tableContainer {
+    flex-direction: column;
+    align-items: center; /* Centraliza os cards empilhados */
+  }
+  .planCard {
+    width: 100%;
+    max-width: 400px; /* Limita a largura dos cards empilhados */
+  }
+}

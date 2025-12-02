@@ -1,0 +1,44 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fcfeff;
+}
+
+
+.hero {
+  text-align: center;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #0066ff;
+}
+
+p {
+  color: #333;
+  font-size: 18px;
+}
+
+button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004acc;
+}

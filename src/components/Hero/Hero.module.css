@@ -1,0 +1,151 @@
+/* Container principal da seção Hero */
+.hero {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaço entre texto e imagem */
+    min-height: 90vh; /* Altura mínima de 90% da tela */
+    /* Usando 'clamp' para padding superior: min(3rem) <= valor <= max(6rem) */
+    padding: clamp(3rem, 5vw, 6rem) 5% 2rem;
+    background-color: #F5F6FA; /* Fundo claro */
+    gap: 2rem; /* Espaço entre as colunas */
+}
+
+/* Coluna da esquerda (Conteúdo) */
+.heroContent {
+    /* Em telas grandes, mantém a proporção 50/50 */
+    flex: 1; 
+    max-width: 50%;
+    padding-right: 2rem; /* Espaçamento da imagem */
+}
+
+/* Título: Ajuste o tamanho da fonte para ser mais responsivo */
+.title {
+    /* Usando 'clamp' para o tamanho da fonte: min(2rem) <= valor <= max(3.5rem) */
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    font-weight: 700;
+    color: #333; 
+    margin: 0;
+    line-height: 1.2;
+}
+
+.brandName {
+    display: block; 
+    color: #aa0a00; 
+}
+
+/* Descrição: Ajuste o tamanho da fonte para ser mais responsivo */
+.description {
+    /* Usando 'clamp' para o tamanho da fonte: min(1rem) <= valor <= max(1.25rem) */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #555; 
+    margin: 1.5rem 0;
+}
+
+.ctaButton {
+    display: inline-block;
+    background-color: #0d6efd; 
+    color: #ffffff; 
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #0b5ed7; 
+}
+
+/* Coluna da direita (Imagem) */
+.heroImageContainer {
+    flex: 1;
+    max-width: 50%;
+    text-align: right; 
+}
+
+.heroImage {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+/* ---------------------------------------------------- */
+/* 📐 MEDIA QUERIES PARA RESPONSIVIDADE       */
+/* ---------------------------------------------------- */
+
+/**
+ * 💻 Para Telas Grandes e Médias (Até 1024px)
+ * Apenas pequenos ajustes de espaçamento.
+ */
+@media (max-width: 1024px) {
+    .hero {
+        /* Reduz um pouco o padding lateral se necessário */
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+/**
+ * 📱 Para Tablets e Telas Menores (Até 768px)
+ * A estrutura principal deve mudar de linha (flex-direction: column)
+ */
+@media (max-width: 768px) {
+    .hero {
+        /* Empilha os elementos: imagem e conteúdo */
+        flex-direction: column; 
+        min-height: auto; /* Deixa a altura ser determinada pelo conteúdo */
+        padding-bottom: 4rem; /* Mais espaço na parte inferior */
+    }
+
+    .heroContent,
+    .heroImageContainer {
+        /* Ocupam a largura total e removemos a largura máxima */
+        max-width: 100%; 
+        flex: none; /* Remove a propriedade flex para ocupar 100% da largura */
+    }
+    
+    .heroContent {
+        padding-right: 0; /* Remove padding lateral que era para a imagem */
+        order: 2; /* Move o conteúdo para baixo da imagem (ou o contrário, dependendo da prioridade) */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    .heroImageContainer {
+        order: 1; /* Move a imagem para o topo */
+        margin-bottom: 2rem; /* Espaço entre a imagem e o texto */
+        text-align: center; /* Centraliza a imagem */
+    }
+    
+    .heroImage {
+        max-width: 80%; /* Garante que a imagem não seja muito grande em tablets */
+    }
+
+    .title,
+    .description {
+        /* Alinha o texto ao centro nas telas menores */
+        text-align: center;
+    }
+}
+
+/**
+ * 🤳 Para Celulares (Até 480px)
+ * Ajustes finos de espaçamento e tamanho da imagem.
+ */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 4rem; /* Menos padding no topo */
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .heroImage {
+        /* Reduz o tamanho máximo da imagem no celular */
+        max-width: 90%; 
+    }
+    
+    .title {
+        /* Garante que o título não fique muito grande */
+        font-size: 2rem; 
+    }
+}

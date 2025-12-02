@@ -1,0 +1,227 @@
+/* Container principal do header */
+.header {
+  width: 100%;
+  padding: 1rem 5%;
+  background-color: #0d47a1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  /* margin-bottom: 20px; */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Container da navegação interna */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Estilo do Logo */
+.logoLink {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+/* Estilo para a imagem do logo */
+.logoImage {
+  height: 25px;
+  width: auto;
+  display: block;
+}
+
+/* Lista de links */
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Links individuais */
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Efeito ao passar o mouse */
+.navLink:hover {
+  color: #bbdefb;
+}
+
+/* Estilo para o botão de Entrar */
+.loginButton {
+  background-color: #0056D2;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.loginButton:hover {
+  background-color: #003f9a;
+}
+
+/* Botão hambúrguer (oculto por padrão) */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.menuToggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animação do X quando menu está aberto */
+.menuToggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menuToggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ==================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ================================== */
+
+/* Tablets e telas menores (até 968px) */
+@media (max-width: 968px) {
+  .header {
+    padding: 1rem 3%;
+  }
+
+  .navList {
+    gap: 1.5rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+
+  .loginButton {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-left: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 4%;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .navList {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #0d47a1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+    gap: 0;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .navList.active {
+    right: 0;
+  }
+
+  .navList li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navLink {
+    display: block;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .navLink:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .loginButton {
+    margin: 1.5rem auto 0;
+    display: block;
+    width: calc(100% - 2rem);
+    text-align: center;
+  }
+
+  .navList.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 3%;
+  }
+
+  .logoImage {
+    height: 20px;
+  }
+
+  .menuToggle span {
+    width: 22px;
+  }
+
+  .navList {
+    width: 80%;
+  }
+
+  .navLink {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary: #0056b3;
+  --accent: #2196f3;
+  --success: #00c853;
+  --bg-light: #f8f9fa;
+  --text-dark: #1e293b;
+  --text-gray: #64748b;
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  --shadow-up: 0 -10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Container Geral */
+.andamento-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  /* Garante que os elementos fiquem um embaixo do outro */
+}
+
+/* --- Topo (Header) --- */
+/* Se o Header tiver classe própria, ótimo. Se não, isso garante que ele fique no topo */
+.andamento-container>header {
+  position: relative;
+  z-index: 20;
+  /* Fica acima de tudo */
+}
+
+/* --- CORREÇÃO DO MAPA / ÁREA SUPERIOR --- */
+.map-container {
+  width: 100%;
+  height: 45vh;
+  /* Aumentei um pouco para dar imponência ao banner */
+  min-height: 320px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #e2e8f0;
+  /* Cor de fundo caso algo falhe */
+  overflow: hidden;
+  /* Garante que nada saia da caixa */
+}
+
+/* --- ESTILO DO NOVO BANNER DE STATUS (HERO) --- */
+.status-hero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-bottom: 40px;
+  /* Compensação visual por causa da caixa branca que sobe */
+  position: relative;
+}
+
+/* Gradiente Padrão (Azul da marca) */
+.status-hero-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+/* Gradiente Verde (Para sucesso/finalizado) */
+.status-hero-success {
+  background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+}
+
+.hero-content {
+  z-index: 2;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.hero-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  animation: bounce 2s infinite;
+}
+
+.status-hero h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-hero p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+/* Padrão de fundo decorativo (Círculos sutis) */
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+
+.white-box {
+  background: white;
+  margin-top: -50px;
+  /* Sobe mais para cobrir o fim do banner */
+  border-radius: 40px 40px 0 0;
+  padding: 40px 8%;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+  /* Sombra mais suave para cima */
+  min-height: 60vh;
+}
+
+/* Animações Simples */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* --- Ajuste Mobile --- */
+@media (max-width: 768px) {
+  .status-hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .status-hero p {
+    font-size: 0.9rem;
+    padding: 0 20px;
+  }
+
+  .hero-icon {
+    font-size: 2.5rem;
+  }
+
+  .map-container {
+    height: 40vh;
+    /* Um pouco menor no mobile */
+  }
+}
+
+/* --- Barra de Progresso --- */
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #e2e8f0;
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  /* Distribui espaço igualmente */
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  margin-bottom: 8px;
+  border: 3px solid white;
+  transition: all 0.4s ease;
+}
+
+.circle.active {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.2);
+  transform: scale(1.1);
+}
+
+.step p {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.active-text {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+}
+
+/* --- Card do Mecânico --- */
+.mec-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 30px;
+}
+
+.mec-foto {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bg-light);
+}
+
+.info {
+  margin-left: 15px;
+  flex-grow: 1;
+}
+
+.info h2 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin: 0 0 5px 0;
+}
+
+.mec-detalhe {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+.stars {
+  font-size: 0.8rem;
+  color: #fbbf24;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Tempo */
+.tempo-container {
+  text-align: right;
+  min-width: 80px;
+}
+
+.tempo-label {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+.tempo-valor {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.finalizado {
+  color: var(--success);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.btn-avaliar {
+  padding: 8px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* --- Botões de Ação --- */
+.bottom-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-mensagem,
+.btn-suporte {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.btn-mensagem {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+}
+
+.btn-suporte {
+  background: white;
+  color: var(--text-dark);
+  border: 1px solid #e2e8f0;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .white-box {
+    padding: 30px 20px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .step p {
+    font-size: 0.65rem;
+    display: none;
+    /* Em telas muito pequenas, pode esconder o texto dos passos inativos se quiser */
+  }
+
+  .step p.active-text {
+    display: block;
+    /* Mostra apenas o texto ativo */
+  }
+
+  .mec-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info {
+    margin: 10px 0;
+  }
+
+  .tempo-container {
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+    width: 100%;
+  }
+}

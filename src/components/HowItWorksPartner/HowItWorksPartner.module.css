@@ -1,0 +1,57 @@
+.howItWorksSection {
+  background-color: #192a56; /* Azul escuro, igual à seção anterior */
+  color: #ffffff;
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem; /* Mais espaço antes dos ícones */
+}
+
+.stepsContainer {
+  display: flex;
+  justify-content: space-around; /* Distribui os 3 passos */
+  align-items: flex-start; /* Alinha pelo topo */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step {
+  flex: 1; /* Cada passo ocupa o mesmo espaço */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px; /* Limita a largura de cada passo */
+}
+
+.iconContainer {
+  margin-bottom: 1.5rem;
+  /* Opcional: Se os ícones não tiverem o brilho, 
+     você pode tentar adicionar um 'box-shadow' aqui */
+  /* box-shadow: 0 0 20px 5px rgba(255, 105, 180, 0.3); */ 
+}
+
+.icon {
+  width: 120px; /* Ajuste o tamanho conforme o ícone exportado */
+  height: 120px;
+  object-fit: contain;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0; /* Um branco um pouco mais suave */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .stepsContainer {
+    flex-direction: column; /* Coloca os passos um embaixo do outro */
+    align-items: center; /* Centraliza eles */
+    gap: 4rem; /* Aumenta o espaço vertical */
+  }
+}
